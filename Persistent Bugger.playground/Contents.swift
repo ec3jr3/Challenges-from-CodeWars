@@ -9,15 +9,23 @@
  */
 func persistence(for num: Int) -> Int {
     
-    let stringnum = String(num)
+    var stringnum = String(num)
+    var result = 1
+    var count = 0
     
-    for i in stringnum{
-    print(i)
-        while stringnum.count != 1 {
-            
-        }
+    if stringnum.count == 1  {return 0}
+   while stringnum.count > 1 {
+       
+       for i in stringnum {
+           result *= Int(String(i))!
+           stringnum.removeAll()
+           stringnum.append(String(result))
+       }
+       result = 1
+       count += 1
     }
-    return 0
+    return count
 }
 
 print(persistence(for: 39))
+print(persistence(for: 999))
