@@ -4,10 +4,13 @@
  Example: The binary representation of 1234 is 10011010010, so the function should return 5 in this case
  */
 func countBits(_ n: Int) -> Int {
-    let str = String(n, radix: 2)
+    
+    let bit = String(n, radix: 2)
     var count = 0
-    for i in str{
-        if i == "1" {
+    
+    for i in bit {
+        if i == "1"
+        {
             count += 1
         }
     }
